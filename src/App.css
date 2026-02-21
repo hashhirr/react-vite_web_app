@@ -283,6 +283,12 @@
   margin-bottom: 0.75rem;
 }
 
+.accepted-text {
+  margin: 0 0 1.2rem;
+  font-size: 1.05rem;
+  color: #7a3346;
+}
+
 .sticker {
   width: 140px;
   height: auto;

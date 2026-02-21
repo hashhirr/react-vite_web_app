@@ -34,12 +34,20 @@ function App() {
 
   const lastNoIndex = NO_PHRASES.length - 1;
   const noLabel = NO_PHRASES[Math.min(noClicks, lastNoIndex)];
-  const promptText = accepted
-    ? "You said yes my queen|"
-    : "Will you be my valentines my queen|";
+  const promptText = accepted ? (
+    <>
+      I knew it,
+      <br />
+      my queen.
+    </>
+  ) : (
+    "Will you be my valentines my queen"
+  );
   const subtitleText = accepted
     ? ""
     : "I saved a spot just for us, wrapped in roses and a quiet promise.";
+
+  const acceptedText = "You just made my whole world glow.";
 
   const getRandomPositionOutsideCard = useCallback((): Position => {
     const width = window.innerWidth;
@@ -132,6 +140,7 @@ function App() {
           <h1 className="title" aria-live="polite">
             {promptText}
           </h1>
+          {accepted && <p className="accepted-text">{acceptedText}</p>}
           {subtitleText && <p className="subtitle">{subtitleText}</p>}
           <div className="actions">
             {accepted ? (
